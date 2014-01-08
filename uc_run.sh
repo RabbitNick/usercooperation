@@ -3,6 +3,8 @@
 
 FILE=$1
 
+
+
 #cat testaa | socat - TCP:192.168.2.2:8000 &
 #cat testac | socat - TCP:192.168.3.2:8002 &
 #cat testab | socat - TCP:192.168.4.2:8000 &

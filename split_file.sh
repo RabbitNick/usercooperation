@@ -1,12 +1,9 @@
 #! /bin/sh
 
 FILENAME=$1
-NUM = $2
+NUM=$2
 
 
-
-echo "The file name : $FILENAME"
-echo "split NUM : $NUM"
 
 
 if [ -z "$FILENAME" ];
@@ -16,7 +13,21 @@ then
   exit -1
 fi
 
-SIZE = du -sh $FILENAME | awk '{print $1}'
-EACH_SIZE = SIZE/NUM
+if [ -z "$NUM" ];
+then
+  echo "Please enter NUM!"
+  return 2
+  exit -1
+fi
 
-split -C EACH_SIZE $FILENAME
+
+echo "The file name : $FILENAME"
+echo "split NUM : $NUM"
+
+
+SIZE=$(stat -c '%s' $FILENAME)
+echo $SIZE
+echo $NUM
+each_size=$(($SIZE/$NUM))
+echo $each_size
+split -C $each_size $FILENAME suc_
