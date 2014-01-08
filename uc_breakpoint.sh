@@ -74,11 +74,3 @@ done
 
 
 
-#dd if=$FILENAME bs=1 count=$each_size skip=0 of=buc1
-#dd if=$FILENAME bs=1 count=$(($SIZE - $each_size)) skip=$each_size of=buc2
-
-
-#each_size=$(($SIZE/$NUM))
-#echo $each_size
-#split -C $each_size $FILENAME suc_
-
