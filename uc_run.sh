@@ -37,7 +37,7 @@ if [ "$MODE"x = "U"x ]; then
 	sleep 2
 	socat UDP:192.168.4.2:8000 ./FILE4 &
 	sleep 2
-	socat UDP:192.168.4.2:8000 ./FILE5 &
+	socat UDP:192.168.5.2:8000 ./FILE5 &
 	sleep 2
 fi
 
